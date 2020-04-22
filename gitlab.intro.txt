@@ -1,0 +1,152 @@
+Part 1
+sudo apt update && sudo apt install -y git python3 python3-venv
+
+alternative:
+Anaconda 2020.02 for Linux Installer...
+
+Git setup:
+git config --global user.name "Sandra Eldrum"
+git config --global user.email "eldrum@physik.uni-kiel.de"
+
+or check without ""
+..
+
+git init
+git add bla.py
+git commit -m "added bla.py"
+git log
+git status
+
+python3 pymath.py
+changing bla.py...
+
+git commit -m "changed bla.py
+git log
+git checkout bff03a..
+or
+git checkout master
+git diff
+later
+git config core.hooksPath .githooks
+git diff HEAD~1
+HEAD~2
+...
+
+git branch -av
+git branch -a
+git push
+git pull
+git branch log (creating a new branch)
+edit file.py
+git add --update
+git commit -m "add log function"
+git push -u origin log (this is now pushed to the new branch or the project)
+-u is shortlink for --set-upstream origin master
+
+showing branches in shell>
+git log --graph
+
+git commit -a (add all files in repo that have been changed but not new files!) -m "adding all"
+git remote add origin git@gitlab.physik.uni-kiel.de:eldrum/bla.git
+or set url correct>
+git remote set-url origin git@gitlab.physik.uni-kiel.de:fortner/pymath-example.git
+
+git push origin master (push local master to origin and there also call it master)
+or/and
+git push origin master
+
+if you havn't set up a ssh key, (https://gitlab.physik.uni-kiel.de/profile/keys) use this:
+git remote add origin https://...
+once your project is on gitlab, invite members of the group to your project..
+permission...
+cloning a project to work on...
+upper right has a clone button..
+type
+git clone git@gitlab.physik.uni-kiel.de:forstner/pymath-example.py
+
+[it's here..]
+git pull (alles, wenn es nur ein file ist)
+git fetch (newest changes from commit)
+git diff HEAD~1
+alles gleich..
+modify pymath-example.py..
+git status
+git add --update (add all changed files)
+your shell will tell you what happened..:]
+git config user.email "sandra@bla.net"
+git commit -m "added useful fkt"
+git fetch (if there isn't anything new and your new .py is useful, you can now push into the masterbranch)
+git push
+or
+git push -u origin master
+
+
+
+
+Part 2
+
+
+
+...
+git branch multiplication
+git checkout multiplication
+git status
+git log
+
+What i did:
+git clone git@gitlab.physik.uni-kiel.de:forstner/pymath-example.git
+git remote add origin git@gitlab.physik.uni-kiel.de:/forstner/pymath-example
+git push origin master
+git add *
+git status
+git fetch to add new files
+git pull
+or
+git pull origin master to fully update, fetch, and merge
+
+.gitignore....is a file that you can put into your filesystem (where .git lies), and you just write into it (list) everything, that does not change and does not need to be added via
+git add
+
+
+Goto Pymath-Project, Settings..
+Runners
+Enable shared Runners...(pc-deamon to watch for shared scripts..) runner is now waiting
+GOTO Shell>
+git add .gitlab-ci.yml
+git commit -m 'set up CI'
+git push
+GOT Browser-gitlab>
+clock icon, job has passed...triggered 47 sec. ago..
+editing .gitlab-ci.ym to add new pymath.py to get announcements..create documentation...distributions..all sorts of things are automatically created via this helperscript running on some 'deamon'/virtual machine which is part of the gitlab-project-physics-environment (somewhere inside the IT of Uni Kiel/Physics Group!
+git commit..
+
+
+link>
+https://gitlab.physik.uni-kiel.de/forstner/pymath-example/pipelines/8423
+
+UNIFIED CODESTYLE>
+open source editor by Microsoft(?!) will autmatically check correct formatting (SolO-formatting):
+vscodium
+pycharm
+
+
+Commit-hooks>
+.yml or pre-commit hook file, before committing, a script is run to check your syntax (locally)
+flake8
+isort
+set up the pre-commit hooks (Gitlab> Project overview-Details)
+[pre-commit hooks are like 'compilers' with additional style demands, python is usually pre-compiled unlike C and older languages..]
+
+Decoders..>
+
+Testing..>
+write testscript.py to check small codes
+
+Documenting inside code>
+For representations it's not necessary, cause they selfrepresent..
+#Stuff to the right, i.e. 'TODO', 'FIXME', etc.
+
+or below introduction of new script, classes, and functions/methods
+"""Stuff inside, 
+"""
+will end up in the documentation
