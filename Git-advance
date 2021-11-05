@@ -1,0 +1,59 @@
+# An useful websit: git-scm.com/docs/
+#
+Git add */*/.txt. ; certain file 
+Git commit
+
+
+#####
+Git rebase
+# squash the commit as one before you commit
+# jartto.wang/2018/12/11/git-rebase
+# the first commit should be pick and then you could squash the ramain
+# please don't squash the uncommited changes to a commited head. It works but generate conflict
+git rebase -i HEAD~4
+git rebase --edit-tod
+git rebase --continue
+git rebase --abort
+git log
+
+
+# rebase the commit to another branch. 
+git rebase -i main
+# you may encounter conflict.  delete the prompt word and decide the final version
+#then
+#->"Resolving a merge conflict using the command line"
+git add .
+git rebase --continue
+git push -f. ; force to commit
+# until it finish.
+###
+
+
+#
+git reflog
+#####
+Git reset
+# please do not use it or use it very very carefully\
+git reset --hard HEAD. ; will discard all the not yet commit change. it is very very dangerous
+# if you have commit the history, even if you have reset --hard, you could also save them back by the HEAD{} in git reflog.
+
+Git revert
+git revert --abort
+git revert -m 1 dd8394873294
+git revert HEAD
+# git revert will generate another commit that in certain version, above the current history
+# could revert to certain version in git log, but if you want to revert back you add a commit command
+# still not very safe
+git checkout <commit numb>; is good for look the data.
+
+
+###
+git merge --abort.; if have conflict
+
+
+Git restore filename
+# together with git checkout filename
+# could give you back the script you wrongly deleted or changed.\
+
+###
+Git cherry-pick; might be th last thing to test.
